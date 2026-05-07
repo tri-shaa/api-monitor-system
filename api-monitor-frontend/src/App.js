@@ -17,7 +17,7 @@ function App() {
   const [responsive, setResponsive] = useState(false); // ✅ NEW
 
   const fetchApis = async () => {
-    const res = await fetch("http://localhost:8080/api/all");
+    const res = await fetch("https://api-monitor-backend-1qym.onrender.com/api/all");
     const data = await res.json();
     data.sort((a, b) => a.id - b.id);
     setApis(data);
@@ -44,7 +44,7 @@ function App() {
   const addApi = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:8080/api/add", {
+    await fetch("https://api-monitor-backend-1qym.onrender.com/api/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ function App() {
   };
 
   const deleteApi = async (id) => {
-    await fetch(`http://localhost:8080/api/delete/${id}`, {
+    await fetch(`https://api-monitor-backend-1qym.onrender.com/api/delete/${id}`, {
       method: "DELETE",
     });
     fetchApis();
