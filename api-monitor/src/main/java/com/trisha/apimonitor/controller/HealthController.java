@@ -13,10 +13,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-@CrossOrigin(origins = {
-        "http://localhost:3000",
-        "https://api-monitor-system-three.vercel.app"
-})
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
 public class HealthController {
